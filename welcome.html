@@ -1,0 +1,954 @@
+<!--this is the welcome page.
+It will comprise:
+welcome pg/video template;
+sign up template
+login template
+and help/chat template-->
+
+<!--we start with welcome template-->
+<template name="welcome">
+    <div class="welcome">
+
+        <div class="welcomeMain">
+                <div style="font-size:x-large;height:10vh;margin-left:auto;margin-right:auto;margin-bottom:2px;padding:20px 5px 5px 5px;width:99%;border-top:1px solid #eef3f6;
+                            font-family: 'Lucida Calligraphy';border-right:1px solid #eef3f6;border-left:1px solid #eef3f6;border-bottom:1px solid #dde7ee;background-color: #fff;">
+                    timewonks.com
+                </div>
+       <div>
+        {{#transition in="slideInRight" out="slideOutLeft"}}
+         {{#if $eq slideStage "slideOne"}}
+
+               <div class="slideOne" style="margin:auto;height: 90vh;width:99%;border-top:1px solid #eef3f6;border-right:1px solid #eef3f6;
+                                            border-left:1px solid #eef3f6;border-bottom:1px solid #dde7ee;background-color: #fff;">
+                   <br>
+                <div style="color:#666; font-size: medium;margin: 10px auto; ">
+                    <img  class="img-responsive center-block" src="/resources/clockz.png" alt="">
+
+                    <br>
+                    We make it super easy for You<br> to lose weight <br>
+                    by planning Your meals and workouts<br>
+                    for You, for FREE!
+                <br><br>
+                <a style="text-decoration: none;color:#fff;background-color: #55acee;font-size: large;padding:5px 40px;margin:auto;
+                border-radius: 25px;" href="{{pathFor 'login'}}">&nbsp;
+                Login
+                </a>&nbsp;
+                <a style="text-decoration: none;color:#55acee;background-color: #fff;border: 1px solid #55acee;font-size: large;padding:5px 40px;margin:auto;
+                border-radius: 25px;" href="{{pathFor 'health'}}">&nbsp;
+                        Join
+                    </a>
+                </div>
+               </div>
+
+           {{else}}
+           {{#if $eq slideStage "slideTwo"}}
+
+               <div class="slideTwo"  style="margin:auto;height: 90vh;width:99%;border-top:1px solid #eef3f6;border-right:1px solid #eef3f6;
+                                            border-left:1px solid #eef3f6;border-bottom:1px solid #dde7ee;background-color: #fff;overflow: hidden;
+                                            -moz-background-image: url('/resources/weightloss.jpg');-webkit-background-image: url('/resources/weightloss.jpg');
+                                            background-image: url('/resources/weightloss.jpg');">
+                       <div style="font-size:x-large;background-color:#ccc;opacity:0.5;padding: 10px;top:0;left:0;right:0;color:#000;">
+                           <div style="opacity:1;">TimeWonks helps You:</div>
+                       </div>
+
+               <div>
+                {{#transition in="slideInRight" out="slideOutLeft"}}
+                 {{#if $eq slideTwoStage 'slideTwoOne'}}
+
+                       <div class="slideTwoOne" style="margin:auto;height:90vh;width:100%;overflow: hidden;">
+                         <div class="row" style="font-size:x-large;color:#000;width:100%;height:90vh;margin:auto;overflow: hidden;">
+                        <div style="background-color:#ccc;opacity:0.5;padding:10px;">Lose Weight</div>
+                        </div>
+
+                    </div>
+
+                 {{else}}
+                  {{#if $eq slideTwoStage 'slideTwoTwo'}}
+
+                      <div class="slideTwoTwo" style="margin:auto;height:90vh;width:100%;overflow: hidden;">
+                          <div class="row" style="font-size:x-large;color:#000;width:100%;height:90vh;margin:auto;overflow: hidden; ">
+                              <div style="background-color:#ccc;opacity:0.5;padding:10px;">Reduce body fat</div>
+                          </div>
+
+
+                      </div>
+
+                 {{else}}
+
+                    <div class="slideTwoThree" style="margin:auto;height:90vh;width:100%;overflow: hidden;">
+                    <div class="row" style="font-size:x-large;color:#000;width:100%;height:90vh;margin:auto;overflow: hidden; ">
+                        <div style="background-color:#ccc;opacity:0.5;padding:10px;">Tone Your Body</div>
+                    </div>
+                    </div>
+
+                  {{/if}}
+                 {{/if}}
+                {{/transition}}
+                </div>
+               </div>
+
+           {{else}}
+             {{#if $eq slideStage "slideThree"}}
+
+                   <div class="slideThree"  style="margin:auto;height: 90vh;width:99%;border-top:1px solid #eef3f6;border-right:1px solid #eef3f6;
+                                                   border-left:1px solid #eef3f6;border-bottom:1px solid #dde7ee;">
+
+                    <div>
+                   {{#transition in="slideInRight" out="slideOutLeft"}}
+                       {{#if $eq slideThreeStage 'slideThreeOne'}}
+
+                           <div class="slideThreeOne" style="margin:auto;height:90vh;width:100%;overflow: hidden;">
+                               <div class="row" style="font-size:large;color:#333;width:100%;height:90vh;margin:auto;overflow: hidden;">
+                                   <div style="font-size:x-large;padding:20px 2px 10px 2px;">CONVENIENT</div>
+                                   <li style="color:#333;list-style: circle;text-align: left; padding-left: 5px; ">No more guessing.</li>
+                                   <li style="color:#333;list-style: circle;text-align: left; padding-left: 5px; ">No counting calories. We do that for You.</li>
+                                   <li style="color:#333;list-style: circle;text-align: left; padding-left: 5px; ">Access to meals and workouts customized to You.</li>
+                                   <br>
+                                   <img  class="img-responsive center-block" src="/resources/snapFinger.png" alt="">
+                               </div>
+
+                           </div>
+
+                       {{else}}
+                           {{#if $eq slideThreeStage 'slideThreeTwo'}}
+
+                               <div class="slideThreeTwo" style="margin:auto;height:90vh;width:100%;overflow: hidden;">
+                                   <div class="row" style="font-size:large;color:#333;width:100%;height:90vh;margin:auto;overflow: hidden;">
+                                       <div style="font-size:x-large;padding:20px 2px 10px 2px;">FREE TO USE </div>
+                                       <li style="color:#333;list-style: circle;text-align: left; padding-left: 15px; ">The service is free with Optional purchase of fitness classes.</li>
+                                       <li style="color:#333;list-style: circle;text-align: left; padding-left: 15px; ">Classes as low as $7/Class.</li>
+                                       <li style="color:#333;list-style: circle;text-align: left; padding-left: 15px; ">No need to join a gym.</li>
+                                       <li style="color:#333;list-style: circle;text-align: left; padding-left: 15px; ">If you already have a gym, then we help you fully utilize your gym.</li>
+                                       <br>
+                                       <img  class="img-responsive center-block" src="/resources/Free.png" alt="">
+                                   </div>
+
+                               </div>
+
+                           {{else}}
+                               {{#if $eq slideThreeStage 'slideThreeThree'}}
+
+                               <div class="slideThreeThree" style="margin:auto;height:90vh;width:100%;overflow: hidden;">
+                                   <div class="row" style="font-size:large;color:#333;width:100%;height:90vh;margin:auto;overflow: hidden;">
+                                       <div style="font-size:x-large;padding:20px 2px 10px 2px;">REAL TIME CHAT HELP</div>
+                                       <li style="color:#333;list-style: circle;text-align: left; padding-left: 15px; ">Chat for free with a diet/fitness coach.</li>
+                                       <li style="color:#333;list-style: circle;text-align: left; padding-left: 15px; ">Real time updates on your progress.</li>
+                                       <br>
+                                       <img  class="img-responsive center-block" src="/resources/Chat.png" alt="">
+                                   </div>
+                               </div>
+
+                           {{else}}
+                                <div class="slideThreeFour" style="margin:auto;height:90vh;width:100%;overflow: hidden;">
+                                   <div class="row" style="color:#333;width:100%;height:90vh;margin:auto;overflow: hidden;">
+                                       <div style="font-size:x-large;padding:20px 2px 10px 2px;">SUPER EASY TO USE</div>
+                                       <div style="font-size:large;color:#333;text-align: center; ">
+                                           Just Shuffle, Pick & Play:
+                                       </div>
+                                       <br><br><br>
+                                       <div class="row"  style="margin: auto;padding:10px 0 8px 0;">
+
+                                           <div class="col-xs-4" >
+                                               <div class="slideThreeShuffle" style="margin:auto;padding:12px;background-color:#55acee;
+                                                                                    border: 1px solid #55acee;border-radius:50%;height:60px;width:60px;">
+                                                   <i style="font-size:xx-large;color:#fff;" class="ion ion-shuffle"></i>
+                                               </div>
+                                           </div>
+
+                                           <div class="col-xs-4" >
+                                               <div  class="slideThreePick" style="margin:auto;padding:12px;background-color:#55acee;
+                                                                                 border: 1px solid #55acee;border-radius:50%;height:60px;width:60px;">
+                                                   <i style="font-size:xx-large;color:#fff;" class="mdi mdi-plus"></i>
+                                               </div>
+                                           </div>
+
+                                           <div class="col-xs-4">
+                                               <div id="slideThreePlay" style="margin:auto;padding:12px;background-color:#55acee;
+                                                                                    border: 1px solid #55acee;border-radius:50%;height:60px;width:60px;">
+                                                   <i style="font-size:xx-large;color:#fff;" class="mdi mdi-play">
+                                                   </i>
+                                               </div>
+                                           </div>
+
+                                       </div>
+
+                                   </div>
+                                </div>
+
+                       {{/if}}
+                      {{/if}}
+                    {{/if}}
+                   {{/transition}}
+                  </div>
+                 </div>
+             {{/if}}
+            {{/if}}
+           {{/if}}
+{{/transition}}
+           </div>
+
+            <div class="slideNav row" style="margin:auto;width: 210px;z-index: 200;position:absolute;top: 75vh;right:0;left:0;text-align: center;padding:0;">
+                <div class="col-xs-4" style="text-align:center;padding:0;">
+
+                   {{#if $eq slideStage "slideOne"}}
+
+                      <svg class="slideNavBarOne" width="60px" height="3px"  style="background-color: #e1e8ed;border-radius: 3px;" >
+                          <rect x="0" y="0" width="1" height="3" style="fill: #ff3515;" >
+                              <animateTransform attributeName="transform" type="scale" from="1 1" to="60 1" begin="0s" dur="6s" />
+                          </rect>
+                      </svg>
+
+                   {{else}}
+                       <svg class="slideNavBarOne" width="60px" height="3px"  style="background-color: #e1e8ed;border-radius: 3px;" ></svg>
+                   {{/if}}
+
+                </div>
+                <div class="col-xs-4" style="text-align:center;padding:0;">
+
+                    {{#if $eq slideStage "slideTwo"}}
+                        <svg class="slideNavBarTwo" width="60px" height="3px"  style="background-color: #e1e8ed;border-radius: 3px;" >
+                            <rect x="0" y="0" width="1" height="3" style="fill: #ff3515;" >
+                                <animateTransform attributeName="transform" type="scale" from="1 1" to="60 1" begin="0s" dur="14s" />
+                            </rect>
+                        </svg>
+                    {{else}}
+                        <svg class=" slideNavBarTwo" style="width: 60px; height:3px;margin:auto;background-color: #e1e8ed;border:1px solid #e1e8ed;border-radius: 3px;"></svg>
+                    {{/if}}
+
+                </div>
+                <div class="col-xs-4" style="text-align:center;padding:0;">
+
+                    {{#if $eq slideStage "slideThree"}}
+                        <svg class="slideNavBarThree" width="60px" height="3px"  style="background-color: #e1e8ed;border-radius: 3px;" >
+                            <rect x="0" y="0" width="1" height="3" style="fill: #ff3515;" >
+                                <animateTransform attributeName="transform" type="scale" from="1 1" to="60 1" begin="0s" dur="40s" />
+                            </rect>
+                        </svg>
+                    {{else}}
+                        <svg class="slideNavBarThree" style="width: 60px; height:3px;margin:auto;background-color: #e1e8ed;border-radius: 3px;"></svg>
+                    {{/if}}
+
+                </div>
+            </div>
+
+        </div>
+
+            <div class="footer">
+            <div style="margin-bottom: 20px;margin-left:auto;margin-right:auto;width:300px;">
+            <ul style="font-size:large;list-style: circle; ">
+            <li style="float: left;">
+            <span style="position: relative; left: -10px;"><a style="color: #55acee;font-size:large" href="{{pathFor 'help'}}">Contact Us</a></span>
+            </li>
+            <li style="float:right;">
+            <span style="position: relative; left: -10px;"><a style="color: #55acee;font-size:large" href="{{pathFor 'terms'}}">Terms & Privacy</a></span>
+            </li>
+            <!--<a style="border: 1px solid #ccd6dd; border-radius: 20px;padding:5px 10px;color: #55acee;font-size:large" href="{{pathFor 'welcomeSP'}}">Fitness Trainers</a>-->
+            </ul>
+            </div>
+            <br><br>
+
+            <div style="margin: 5px auto;">
+            <i style="font-size: medium;" class="fa fa-registered"></i>&nbsp;Powered and operated by TimeWonks Inc.
+            </div>
+            </div>
+
+    </div>
+</template>
+
+<template name="timewonksVideo">
+
+    <div style="position: relative;">
+        <iframe width="480" height="311" src="https://www.youtube.com/embed/iBhDRT5n8-Y" frameborder="0" allowfullscreen></iframe>
+
+    </div>
+</template>
+<!--sign up template-->
+<template name="signup">
+    <div class="signup">
+        <h4>Almost done, a few seconds  to go</h4>
+        <br>
+        <form>
+         {{#if $eq signStatus 'email'}}
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="email" type="email" name="registerEmail" class="form-control" placeholder="Enter Email">
+          {{#if $eq signError 'email'}}
+              <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a valid email</p>
+         {{/if}}
+            <hr>
+            <i  style="color:#55acee; font-size:xx-large;" id="signEmail" class="fa fa-chevron-circle-down"></i>
+             <hr>
+         {{/if}}
+
+    {{#if $eq signStatus 'names'}}
+     <!--edit form for email-->
+      {{#if $eq signEditz 'email'}}
+          <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+          <br>
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" value="{{email}}" id="email" type="email" name="registerEmail" class="form-control" placeholder="Enter Email">
+          {{#if $eq signError 'email'}}
+              <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a valid email</p>
+          {{/if}}
+            <hr>
+            <i  style="color:#55acee; font-size:xx-large;" id="signEmailEditz" class="fa fa-chevron-circle-down"></i>
+            <hr>
+       {{else}}
+             <h4><i style="color:#000;" class="ion ion-chatboxes"></i> {{email}} <i style="color:#55acee;" id="edit-email" class="glyphicon glyphicon-pencil"></i></h4>
+
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" type="text" placeholder="First Name" id="first-name" />
+          {{#if $eq signFirst 'first-name'}}
+              <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter your first name</p>
+          {{/if}}
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" type="text" placeholder="Last Name" id="last-name" />
+          {{#if $eq signLast 'last-name'}}
+              <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter your last name</p>
+          {{/if}}
+          <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control"  value="{{phone}}"  type="tel"  placeholder="Enter Valid Phone" id="phone"  />
+          {{#if $eq signPhone 'phone'}}
+              <p style="color:#ff3515;">
+                  <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid phone
+              </p>
+          {{/if}}
+            <hr>
+             <i  style="color:#55acee; font-size:xx-large;" id="signNames" class="fa fa-chevron-circle-down"></i>
+             <hr>
+       {{/if}}
+     {{/if}}
+
+      {{#if $eq signStatus 'password'}}
+          <!--edit form for email-->
+          {{#if $eq signEditz 'email'}}
+              <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+              <br>
+              <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" value="{{email}}" id="email" type="email" name="registerEmail" class="form-control" placeholder="Enter Email">
+              <hr>
+              <i  style="-webkit-appearance: none;color:#55acee; font-size:xx-large;" id="signEmailEditz" class="fa fa-chevron-circle-down"></i>
+              <hr>
+          {{else}}
+              <!--edit form for names-->
+          {{#if $eq signEditz 'names'}}
+              <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+              <br>
+               <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" value="{{firstName}}" type="text" placeholder="First Name" id="first-name" />
+               <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" value="{{lastName}}" type="text" placeholder="Last Name" id="last-name" />
+               <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control"  value="{{phone}}"  type="tel"  placeholder="Enter Valid Phone" id="phone"  />
+              {{#if $eq signPhone 'phone'}}
+                  <p style="color:#ff3515;">
+                      <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid phone
+                  </p>
+              {{/if}}
+                  <hr>
+                  <i  style="color:#55acee; font-size:xx-large;" id="signNamesEditz" class="fa fa-chevron-circle-down"></i>
+                  <hr>
+          {{else}}
+                  <div><i style="color:#000;" class="ion ion-chatboxes"></i> {{email}} <i style="color:#55acee;" id="edit-email" class="glyphicon glyphicon-pencil"></i></div>
+            <div><i style="font-size:x-large;color:#000;" class="mdi mdi-account-check"></i>{{firstName}} {{lastName}} <i style="color:#55acee;" id="edit-names" class="glyphicon glyphicon-pencil"></i> </div>
+              <div><i style="color:#000;" class="fa fa-phone-square"></i> {{phone}} <i style="color:#55acee;" id="edit-names" class="glyphicon glyphicon-pencil"></i> </div>
+              <br>
+          <!--we add the password-->
+            <input style="height: 50px;-webkit-appearance: none;padding-top: 10px;padding-bottom:10px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="pword" type="password" class="form-control" placeholder="Enter Password" />
+            <br>
+            <input style="margin-bottom:5px;height: 50px;-webkit-appearance: none;padding-top: 10px;padding-bottom:10px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" type="password" placeholder="Confirm Password" id="pwordagain" />
+            <br>
+
+          {{#if $eq pwdError 'missmatch'}}
+              <p style="color:#ff3515;">
+                  <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Sorry! Your passwords do not match!
+              </p>
+          {{/if}}
+
+            <input style="color:#66757f;width:290px;background-color:#fff;font-size: large;padding:5px 2px;margin:auto;border:1px solid #ccd6dd;border-radius: 20px;" type="submit" value="Sign Up" class="btn btn-block btn-info">
+              <div style="margin-top:10px;font-size: small;color:#8899a6;">
+                  By Signing up, you have read and agree to our usage <a style="color:#55acee;" href="{{pathFor 'terms'}}">terms</a>
+              </div>
+          {{/if}}
+       {{/if}}
+      {{/if}}
+
+        </form>
+
+    <div class="signup-footer">
+        <div style="margin:auto;width:300px;">
+            <ul style="font-size:large;list-style: circle; ">
+                <li style="float: left;">
+                    <span style="position: relative; left: -10px;"><a style="color: #55acee;font-size:large" href="{{pathFor 'help'}}">Contact Us</a></span>
+                </li>
+                <li style="float:right;">
+                    <span style="position: relative; left: -10px;"><a style="color: #55acee;font-size:large" href="{{pathFor 'terms'}}">Terms & Privacy</a></span>
+                </li>
+                <!--<a style="border: 1px solid #ccd6dd; border-radius: 20px;padding:5px 10px;color: #55acee;font-size:large" href="{{pathFor 'welcomeSP'}}">Fitness Trainers</a>-->
+            </ul>
+        </div>
+        <br><br>
+
+        <div style="margin: 5px auto;">
+            <i style="font-size: medium;" class="fa fa-registered"></i>&nbsp;Powered and operated by TimeWonks Inc.
+        </div>
+    </div>
+  </div>
+</template>
+
+<!--login template-->
+<template name="login">
+    <div class="login">
+
+        <h3>Member Login</h3>
+        <form id="login">
+
+            <input style="height: 50px;-webkit-appearance: none;padding-top: 10px;padding-bottom:10px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="login-email" type="email" name="loginEmail" class="form-control" placeholder="Enter Email" />
+            {{#if $eq loginError 'login'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a valid email
+                </p>
+            {{/if}}
+            <input  style="height: 50px;-webkit-appearance: none;padding-top: 10px;padding-bottom:10px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="login-password" type="password" name="loginPassword" class="form-control" placeholder="Enter Password" />
+            <br>
+            {{#if $eq pwdError 'login'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter your TimeWonks password
+                </p>
+            {{else}}
+            {{#if $eq pwdError 'pwd'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Your TimeWonks login/password info is wrong!
+                </p>
+              {{/if}}
+            {{/if}}
+            <input style="color:#66757f;width:290px;background-color:#fff;font-size: large;padding:5px 2px;margin:auto;border:1px solid #ccd6dd;border-radius: 20px;" type="submit" value="Login" class="btn btn-block btn-primary">
+        </form>
+        <div id="forgot-password" class="pull-left" style="color:#55acee;margin: 10px auto;">
+            Forgot Password?
+        </div>
+
+    </div>
+</template>
+
+<template name="forgotPwd">
+    <div class="forgot-pwd">
+        <div style="font-size:large;margin-top:70px;margin-left:auto; margin-right: auto;color: #8899a6;" class="closePwd">
+            <i style="font-size: xx-large;" class="mdi mdi-close-circle"></i>
+        </div>
+        <hr>
+        <div style="color:#66757f; padding: 5px">
+            Please enter email below to reset your password:
+        </div>
+        {{#if $eq resetPwdError 'pwd'}}
+            <p style="color:#ff3515;">
+                <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a valid email
+            </p>
+        {{else}}
+            {{#if $eq resetPwdError 'none'}}
+                <i style="color: #41d141;" class="fa fa-exclamation-circle"></i> Please check your email above to reset password.
+            {{/if}}
+        {{/if}}
+        <form>
+         {{#if currentUser}}
+          {{#each currentUser.emails}}
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="resetPwdEmail" type="email" value="{{address}}" name="resetPwdEmail" class="form-control" placeholder="Enter Email" />
+          {{/each}}
+             {{else}}
+        <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="resetPwdEmail" type="email" value="" name="resetPwdEmail" class="form-control" placeholder="Enter Email" />
+          {{/if}}
+            <br>
+            <input style="font-size: large;" type="submit" value="Send" class="btn btn-block btn-info">
+        </form>
+    </div>
+</template>
+
+<template name="resetPwd">
+    <div class="login">
+        <h4 style="color:#000; background-color: #fff; padding: 20px 5px 20px 5px; border: 1px solid #666;border-radius: 3px;">
+            Please reset password below:
+        </h4>
+        <form>
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="password" type="text" name="registerPassword" class="form-control" placeholder="Enter Password">
+            <br>
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" type="text" placeholder="Confirm Password" id="password-again" />
+            <br>
+            <input style="font-size: large;" type="submit" value="Save & Login" class="btn btn-block btn-info">
+        </form>
+    </div>
+</template>
+
+<!--help template-->
+<template name="help">
+    <div class="help">
+        <h3>Contact Us </h3>
+       <form>
+        {{#if $eq contactUs 'editMsg'}}
+          <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+           <br>
+            <textarea id="contactMessage" value="{{contactMsg}}" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="text" name="Message" class="form-control" placeholder="Enter Message"></textarea>
+            {{#if $eq contactError 'message'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter message
+                </p>
+            {{/if}}
+            <hr>
+            <i  style="color:#55acee; font-size:xx-large;" id="addMessage" class="fa fa-chevron-circle-down"></i>
+            <hr>
+        {{else}}
+        {{#if $eq contactUs 'message'}}
+            <textarea id="contactMessage" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="text" name="Message" class="form-control" placeholder="Enter Message"></textarea>
+            {{#if $eq contactError 'message'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter message
+                </p>
+            {{/if}}
+            <hr>
+            <i  style="color:#55acee; font-size:xx-large;" id="addMessage" class="fa fa-chevron-circle-down"></i>
+            <hr>
+        {{else}}
+        {{#if $eq contactUs 'contacts'}}
+            <h4>{{contactMsg}} <i id="editMsg" style="font-size: x-large; color:#55acee;" class="glyphicon glyphicon-pencil"></i></h4>
+            <input id="contactEmail" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="email" class="form-control" placeholder="Enter Valid Email" value="{{contactEmail}}">
+            {{#if $eq contactEm 'email'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid email
+                </p>
+            {{/if}}
+            <input id="contactPhone" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="tel" name="userPhone" class="form-control" placeholder="Enter Valid Phone" value="{{contactPhone}}">
+            <br>
+            {{#if $eq contactPh 'phone'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid phone
+                </p>
+            {{/if}}
+
+             {{#if $eq human 'true'}}
+               {{else}}
+               {{#if $eq human 'false'}}
+                 <p style="color:#55acee;border:none;" id="human">
+                     I am Human<i style="font-size: x-large;" class="mdi mdi-cursor-pointer"></i></p>
+                 {{else}}
+                  {{#if $eq human 'check'}}
+                      <br>
+                <p style="color:#ff3515; border: none;" id="human"><i style="color:#ff3515;" class="mdi mdi-alert"></i>
+                  Confirm that you are human
+                      </p>
+                 {{/if}}
+              {{/if}}
+            {{/if}}
+            <input  style="color:#66757f;width:290px;background-color:#fff;font-size: large;padding:5px 2px;margin:auto;border:1px solid #ccd6dd;border-radius: 20px;" type="submit" value="Send" class="btn btn-block btn-info">
+        {{/if}}
+       {{/if}}
+      {{/if}}
+       </form>
+    </div>
+</template>
+
+<!--terms and privacy policy page-->
+<template name="terms">
+    <div class="terms">
+        <h2 style="color: #8899a6;font-family: 'Lucida Grande';">TimeWonks</h2>
+        <h3 style="color: #66757f;">
+        Web Site Terms and Conditions of Use
+        </h3>
+
+        <h4 style="color:#222;">
+            1. Terms
+        </h4>
+
+        <p>
+            By accessing this web site, you are agreeing to be bound by these
+            web site Terms and Conditions of Use, all applicable laws and regulations,
+            and agree that you are responsible for compliance with any applicable local
+            laws. If you do not agree with any of these terms, you are prohibited from
+            using or accessing this site. The materials contained in this web site are
+            protected by applicable copyright and trade mark law.
+        </p>
+
+        <h4 style="color:#222;">
+            2. Use License
+        </h4>
+
+        <ol type="a">
+            <li>
+                Permission is granted to temporarily download one copy of the materials
+                (information or software) on TimeWonks's web site for personal,
+                non-commercial transitory viewing only. This is the grant of a license,
+                not a transfer of title, and under this license you may not:
+
+                <ol type="i">
+                    <li>modify or copy the materials;</li>
+                    <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                    <li>attempt to decompile or reverse engineer any software contained on TimeWonks's web site;</li>
+                    <li>remove any copyright or other proprietary notations from the materials; or</li>
+                    <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+                </ol>
+            </li>
+            <li>
+                This license shall automatically terminate if you violate any of these restrictions and may be terminated by TimeWonks at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+            </li>
+        </ol>
+
+        <h4 style="color:#222;">
+            3. Disclaimer
+        </h4>
+
+        <ol type="a">
+            <li>
+                The materials on TimeWonks's web site are provided "as is". TimeWonks makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, TimeWonks does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
+            </li>
+        </ol>
+
+        <h4 style="color:#222;">
+            4. Limitations
+        </h4>
+
+        <p>
+            In no event shall TimeWonks or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on TimeWonks's Internet site, even if TimeWonks or a TimeWonks authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+        </p>
+
+        <h4 style="color:#222;">
+            5. Revisions and Errata
+        </h4>
+
+        <p>
+            The materials appearing on TimeWonks's web site could include technical, typographical, or photographic errors. TimeWonks does not warrant that any of the materials on its web site are accurate, complete, or current. TimeWonks may make changes to the materials contained on its web site at any time without notice. TimeWonks does not, however, make any commitment to update the materials.
+        </p>
+
+        <h4 style="color:#222;">
+            6. Links
+        </h4>
+
+        <p>
+            TimeWonks has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by TimeWonks of the site. Use of any such linked web site is at the user's own risk.
+        </p>
+
+        <h4 style="color:#222;">
+            7. Site Terms of Use Modifications
+        </h4>
+
+        <p>
+            TimeWonks may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
+        </p>
+
+        <h4 style="color:#222;">
+            8. Governing Law
+        </h4>
+
+        <p>
+            Any claim relating to TimeWonks's web site shall be governed by the laws of the State of Maryland without regard to its conflict of law provisions.
+        </p>
+
+        <p>
+            General Terms and Conditions applicable to Use of a Web Site.
+        </p>
+
+
+
+        <h3 style="color: #66757f;">
+            Privacy Policy
+        </h3>
+
+        <p>
+            Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.
+        </p>
+
+        <ul>
+            <li>
+                Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
+            </li>
+            <li>
+                We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.
+            </li>
+            <li>
+                We will only retain personal information as long as necessary for the fulfillment of those purposes.
+            </li>
+            <li>
+                We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.
+            </li>
+            <li>
+                Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.
+            </li>
+            <li>
+                We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
+            </li>
+            <li>
+                We will make readily available to customers information about our policies and practices relating to the management of personal information.
+            </li>
+        </ul>
+
+        <p>
+            We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.
+        </p>
+
+        <hr>
+    </div>
+</template>
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--templates for service provider templates-->
+
+<!--we start with welcome template-->
+
+<template name="welcomeSP">
+    <div class="welcome">
+        <div style="margin-top:5px;margin-right:auto;margin-left:auto;padding: 20px 5px 15px 5px;background-color: #fff;
+      border-left: 1px solid #e6e6e6;border-right: 1px solid #e6e6e6;border-bottom: 1px solid #cccccc;">
+        <h1>TimeWonks</h1>
+        <hr>
+        <div style=" color:#000;font-family:'Lucida Calligraphy' ">for fitness trainers</div>
+        <hr>
+
+        <div style="font-size: 150px; color: #999;font-weight:100;"><i class="mdi mdi-calendar-clock"></i></div>
+
+        <p>Use our time management tools <br>
+            to grow your business.
+        </p>
+        <hr>
+        <h3>
+        <a class="regular-users" href="{{pathFor 'welcome'}}"><i class="mdi mdi-account"></i>&nbsp;Regular Members
+        </a>
+        </h3>
+        </div>
+    </div>
+</template>
+
+<!--sign up template-->
+<template name="signupSP">
+    <div class="signup">
+        <h3> Sign Up</h3>
+
+        <form>
+            {{#if $eq signStatus 'email'}}
+                <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="email" type="email" name="registerEmail" class="form-control" placeholder="Enter Email">
+                {{#if $eq signError 'email'}}
+                    <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a valid email</p>
+                {{/if}}
+                <hr>
+                <i  style="color:#55acee; font-size:xx-large;" id="signEmail" class="fa fa-chevron-circle-down"></i>
+                <hr>
+            {{/if}}
+
+            {{#if $eq signStatus 'names'}}
+                <!--edit form for email-->
+                {{#if $eq signEditz 'email'}}
+                    <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+                    <br>
+                    <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" value="{{email}}" id="email" type="email" name="registerEmail" class="form-control" placeholder="Enter Email">
+                    {{#if $eq signError 'email'}}
+                        <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a valid email</p>
+                    {{/if}}
+                    <hr>
+                    <i  style="color:#55acee; font-size:xx-large;" id="signEmailEditz" class="fa fa-chevron-circle-down"></i>
+                    <hr>
+                {{else}}
+                    <h3><i style="color:#000;" class="ion ion-chatboxes"></i> {{email}} <i style="color:#55acee;" id="edit-email" class="glyphicon glyphicon-pencil"></i></h3>
+
+                    <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" type="text" placeholder="First Name" id="first-name" />
+                    {{#if $eq signFirst 'first-name'}}
+                        <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter your first name</p>
+                    {{/if}}
+                    <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" type="text" placeholder="Last Name" id="last-name" />
+                    {{#if $eq signLast 'last-name'}}
+                        <p style="color:#ff3515;"><i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter your last name</p>
+                    {{/if}}
+                    <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control"  value="{{phone}}"  type="tel"  placeholder="Enter Valid Phone" id="phone"  />
+                    {{#if $eq signPhone 'phone'}}
+                        <p style="color:#ff3515;">
+                            <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid phone
+                        </p>
+                    {{/if}}
+                    <hr>
+                    <i  style="color:#55acee; font-size:xx-large;" id="signNames" class="fa fa-chevron-circle-down"></i>
+                    <hr>
+                {{/if}}
+            {{/if}}
+
+            {{#if $eq signStatus 'password'}}
+                <!--edit form for email-->
+                {{#if $eq signEditz 'email'}}
+                    <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+                    <br>
+                    <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" value="{{email}}" id="email" type="email" name="registerEmail" class="form-control" placeholder="Enter Email">
+                    <hr>
+                    <i  style="-webkit-appearance: none;color:#55acee; font-size:xx-large;" id="signEmailEditz" class="fa fa-chevron-circle-down"></i>
+                    <hr>
+                {{else}}
+                    <!--edit form for names-->
+                    {{#if $eq signEditz 'names'}}
+                        <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+                        <br>
+                        <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" value="{{firstName}}" type="text" placeholder="First Name" id="first-name" />
+                        <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" value="{{lastName}}" type="text" placeholder="Last Name" id="last-name" />
+                        <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control"  value="{{phone}}"  type="tel"  placeholder="Enter Valid Phone" id="phone"  />
+                        {{#if $eq signPhone 'phone'}}
+                            <p style="color:#ff3515;">
+                                <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid phone
+                            </p>
+                        {{/if}}
+                        <hr>
+                        <i  style="color:#55acee; font-size:xx-large;" id="signNamesEditz" class="fa fa-chevron-circle-down"></i>
+                        <hr>
+                    {{else}}
+                        <h3><i style="color:#000;" class="ion ion-chatboxes"></i> {{email}} <i style="color:#55acee;" id="edit-email" class="glyphicon glyphicon-pencil"></i></h3>
+                        <h3>{{firstName}} {{lastName}} <i style="color:#55acee;" id="edit-names" class="glyphicon glyphicon-pencil"></i> </h3>
+                        <h3><i style="color:#000;" class="fa fa-phone-square"></i> {{phone}} <i style="color:#55acee;" id="edit-names" class="glyphicon glyphicon-pencil"></i> </h3>
+
+                        <input style="-webkit-appearance: none;background-color:#fff; border: 1px solid #fff;font-size: large;" id="password" type="password" name="registerPassword" class="form-control" placeholder="Enter Password">
+                        <br>
+                        <input style="-webkit-appearance: none;background-color:#fff; border: 1px solid #fff;font-size: large;" class="form-control" type="password" placeholder="Confirm Password" id="password-again" />
+                        <br>
+
+                        {{#if $eq pwdError 'missmatch'}}
+                            <p style="color:#ff3515;">
+                                <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Sorry! Your passwords do not match!
+                            </p>
+                        {{/if}}
+                        <br>
+
+                        <input style="font-size: large;" type="submit" value="Sign Up" class="btn btn-block btn-info">
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+
+        </form>
+    </div>
+</template>
+
+<!--login template-->
+<template name="loginSP">
+    <div class="login">
+        <h3>Login</h3>
+        <form class="login">
+
+            <input style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="login-email" type="email" name="loginEmail" class="form-control" placeholder="Enter Email" />
+            {{#if $eq loginError 'login'}}
+                <p style="color:#ff3515;">
+                    <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a login email
+                </p>
+            {{/if}}
+            <input style="-webkit-appearance: none;background-color:#fff; border: 1px solid #fff;font-size: large;" id="login-password" type="password" name="loginPassword" class="form-control" placeholder="Enter Password">
+            <br>
+
+            <input style="font-size: large;" type="submit" value="Login" class="btn btn-block btn-primary">
+        </form>
+    </div>
+</template>
+
+<!--help template-->
+<template name="helpSP">
+    <div class="help">
+        <h3>Contact Us </h3>
+        <form>
+            {{#if $eq contactUs 'editMsg'}}
+                <i style="font-size: xx-large;color:#ff3515;" id="signback" class="mdi mdi-close-circle"></i>
+                <br>
+                <textarea id="contactMessage" value="{{contactMsg}}" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="text" name="Message" class="form-control" placeholder="Enter Message"></textarea>
+                {{#if $eq contactError 'message'}}
+                    <p style="color:#ff3515;">
+                        <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter message
+                    </p>
+                {{/if}}
+                <hr>
+                <i  style="color:#55acee; font-size:xx-large;" id="addMessage" class="fa fa-chevron-circle-down"></i>
+                <hr>
+            {{else}}
+                {{#if $eq contactUs 'message'}}
+                    <textarea id="contactMessage" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="text" name="Message" class="form-control" placeholder="Enter Message"></textarea>
+                    {{#if $eq contactError 'message'}}
+                        <p style="color:#ff3515;">
+                            <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter message
+                        </p>
+                    {{/if}}
+                    <hr>
+                    <i  style="color:#55acee; font-size:xx-large;" id="addMessage" class="fa fa-chevron-circle-down"></i>
+                    <hr>
+                {{else}}
+                    {{#if $eq contactUs 'contacts'}}
+                        <h4>{{contactMsg}} <i id="editMsg" style="font-size: x-large; color:#55acee;" class="glyphicon glyphicon-pencil"></i></h4>
+                        <input id="contactEmail" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="email" class="form-control" placeholder="Enter Valid Email" value="{{contactEmail}}">
+                        {{#if $eq contactEm 'email'}}
+                            <p style="color:#ff3515;">
+                                <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid email
+                            </p>
+                        {{/if}}
+                        <input id="contactPhone" style="-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" type="tel" name="userPhone" class="form-control" placeholder="Enter Valid Phone" value="{{contactPhone}}">
+                        <br>
+                        {{#if $eq contactPh 'phone'}}
+                            <p style="color:#ff3515;">
+                                <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter valid phone
+                            </p>
+                        {{/if}}
+
+                        {{#if $eq human 'true'}}
+                        {{else}}
+                            {{#if $eq human 'false'}}
+                                <p style="color:#55acee;border:1px solid #55acee;padding:5px;border-radius: 3px;" id="human"><i style="color:#55acee;" class="mdi mdi-account-alert"></i>I am a Human</p>
+                            {{else}}
+                                {{#if $eq human 'check'}}
+                                    <br>
+                                    <p style="color:#ff3515; border: 1px solid #ff3515;padding:5px;border-radius: 3px;" id="human"><i style="color:#ff3515;" class="mdi mdi-account-alert"></i>
+                                        Confirm: I am a Human
+                                    </p>
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                        <input style="font-size: large;" type="submit" value="Send" class="btn btn-block btn-info">
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        </form>
+    </div>
+</template>
+
+<!--admin login template-->
+<template name="loginAdmin">
+    <div class="login">
+        <h3>Admin Login</h3>
+        <form>
+
+            <input style="font-size: large;" id="login-email" type="email" name="loginEmail" class="form-control" placeholder="Enter Email" />
+            <br>
+
+            <input style="font-size: large;" id="login-password" type="password" name="loginPassword" class="form-control" placeholder="Enter Password">
+            <br>
+
+            <input style="font-size: large;" type="submit" value="Login" class="btn btn-block btn-primary">
+        </form>
+
+        <hr>
+        <a style="font-size: large; color:#e32e30;" href="{{pathFor 'login'}}">
+            <i style="font-size:50px; color:#e32e30;" class="mdi mdi-login"></i>
+            <br>
+            Regular Login Page
+        </a>
+
+    </div>
+</template>
+
+<!--landing page layout-->
+<template name="landingPage">
+    <div class="landing-page">
+        <h1>TimeWonks</h1>
+
+        <img id="timePic" class="img-responsive center-block" src="/resources/time.jpg" alt="">
+
+        <div style="width: 90%;margin: 5px auto;font-size: 20px; color: #ff3515;border-radius: 3px;border: 1px solid #8899a6;padding:5px;">
+       Opens {{daysCount}}
+        </div>
+        <br>
+        <p>To use our time management tools <br>
+            to reach your
+            <br>
+            health and fitness goals...
+        </p>
+            <h4 style="color:#66757f;" >
+                Please enter email below:
+            </h4>
+            <form>
+                <input style="margin:auto;width:300px;-webkit-appearance: none;padding-top: 25px;padding-bottom:25px;background-color:#fff; border: 1px solid #fff;font-size: large;" id="landingEmail" type="email" value="" name="landingEmail" class="form-control" placeholder="Enter Email" />
+                {{#if $eq landingEmail 'error'}}
+                    <p style="color:#ff3515;">
+                        <i style="color: #ff3515;" class="fa fa-exclamation-circle"></i> Please enter a valid email
+                    </p>
+                {{/if}}
+                <br>
+                <input style="margin: auto;width: 250px;border-radius:20px;font-size: large;" type="submit" value="Add Email" class="btn btn-block btn-info">
+            </form>
+   </div>
+</template>
+
+
+
